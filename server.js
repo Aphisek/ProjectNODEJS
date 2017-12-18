@@ -26,9 +26,14 @@ app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
-  res.json(contactList);
+  res.render('home',{contact: contactList,body:'default'})
 })
-
+app.get('/contact-info/:id', (req, res) => {
+  res.render('info',{contact: contactList,id:req.params.id})
+})
+app.get('/add', (req, res) => {
+  res.render('add',{contact: contactList,id:req.params.id})
+})
 
 app.listen(8000,
   () => console.log("Server is Running => http://127.0.0.1:8000"))
