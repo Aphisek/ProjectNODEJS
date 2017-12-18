@@ -1,0 +1,28 @@
+<div>
+<form method="POST" action="<%= id %>/update">
+				<div class="list-group-item">
+
+					<div class="form-group">
+
+						<p><label for="name">name: </label> <input name="name" class="form-control" type="text" value="<%= contact[id].name %>"> </p>
+						<p><label for="email">email:</label> <input name="email" class="form-control" type="text" value="<%= contact[id].email %>"> </p>
+						<p><label for="phone">phone:</label> <input name="phone" class="form-control" type="text" value="<%= contact[id].phone %>"> </p>
+						<p><label for="url">url:</label> <input name="url" class="form-control" type="text" value="<%= contact[id].url %>"> </p>
+						<p><label for="notes">notes:</label></p>
+						<textarea class="form-control" name="notes" rows="3"><%= contact[id].notes %></textarea>
+					</div>
+
+
+					
+						<button class="btn btn-default" type="submit">
+							<span class="glyphicon glyphicon-ok"></span>
+							<span> Save Edits</span>
+						</button>
+
+					<a href="#/">
+						<button class="btn btn-default">
+							<span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
+						</button>
+					</a>
+				</div></form>
+			</div>

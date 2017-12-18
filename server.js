@@ -34,6 +34,22 @@ app.get('/contact-info/:id', (req, res) => {
 app.get('/add', (req, res) => {
   res.render('add',{contact: contactList,id:req.params.id})
 })
+app.get('/edit/:id', (req, res) => {
+  res.render('edit',{contact: contactList,id:req.params.id})
+})
+app.post('/add', (req, res) => {
+  contactList.push({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    url: req.body.url,
+    notes: req.body.notes
+  });
+  res.redirect('/');
+})
+app.get('/api/getjson', (req, res) => {
+  res.json(contactList);
+})
 
 app.listen(8000,
   () => console.log("Server is Running => http://127.0.0.1:8000"))
