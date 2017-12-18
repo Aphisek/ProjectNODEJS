@@ -50,6 +50,20 @@ app.post('/add', (req, res) => {
 app.get('/api/getjson', (req, res) => {
   res.json(contactList);
 })
+app.delete('/delete/:id', (req, res) => {
+  contactList.splice(req.params.id, 1);
+   res.send('true')
+})
+app.post('/edit/:id/update', (req, res) => {
+  contactList[req.params.id] = {
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    url: req.body.url,
+    notes: req.body.notes
+  }
+  res.redirect('/');
+})
 
 app.listen(8000,
   () => console.log("Server is Running => http://127.0.0.1:8000"))
