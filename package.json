@@ -1,0 +1,13 @@
+{
+  "name": "webAPI",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "My Team",
+  "description": "Project web API",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "latest",
+    "ejs-locals": "latest",
+    "express": "latest"
+  }
+}
